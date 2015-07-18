@@ -21,4 +21,8 @@ class TestCase extends \PHPUnit_Framework_TestCase {
         Facade::setFacadeApplication($app);
     }
 
+    public function testServiceProvider()
+    {
+        $this->assertCount(3, Facade::getFacadeApplication()->getLoadedProviders());
+    }
 }
